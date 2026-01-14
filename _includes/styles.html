@@ -3,10 +3,10 @@
 :root {
     --primary: #0f172a; /* Deep Midnight Blue */
     --secondary: #1e293b; /* Dark Slate */
-    --accent: #38bdf8; /* Electric Blue */
+    --accent: #38bdf8; /* Electric Blue for Trust/Auto */
     --text-light: #f1f5f9;
     --text-dim: #94a3b8;
-    --gold: #fbbf24; 
+    --gold: #fbbf24; /* For Stars */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,7 +27,6 @@ img, video { max-width: 100%; display: block; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .text-center { text-align: center; }
 .section-pad { padding: 80px 0; }
-
 .btn {
     display: inline-block;
     padding: 14px 32px;
@@ -38,28 +37,27 @@ img, video { max-width: 100%; display: block; }
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
-    border: none;
-    cursor: pointer;
 }
 .btn:hover { transform: translateY(-2px); background: #fff; }
 
-/* --- HEADER --- */
+/* --- HEADER/NAV --- */
 header {
     position: absolute;
     top: 0; left: 0; width: 100%;
-    z-index: 100; /* High z-index so it sits over hero */
+    z-index: 10;
     padding: 20px 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
 }
 .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-.logo-text { font-size: 1.8rem; font-weight: 900; font-style: italic; letter-spacing: -1px; color: #fff; }
+.logo-area img { height: 60px; } /* Adjust based on Logo.png */
+.logo-text { font-size: 1.5rem; font-weight: 800; font-style: italic; letter-spacing: -1px; }
 
-/* --- HERO --- */
+/* --- HERO SECTION --- */
 .hero {
-    min-height: 90vh;
+    height: 90vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.95)), url('assets/hero-bg.jpg'); /* Add a hero image to assets */
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1626073746681-344465be3f87?q=80&w=2500&auto=format&fit=crop'); 
     background-size: cover;
     background-position: center;
 }
@@ -69,6 +67,7 @@ header {
     line-height: 1.1;
     margin-bottom: 20px;
 }
+.hero-content p { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 30px; max-width: 600px; }
 
 /* --- VERTICAL VIDEO GALLERY --- */
 .video-scroller {
