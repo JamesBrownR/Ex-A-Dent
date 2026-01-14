@@ -1,1 +1,141 @@
+---
+layout: default
+---
 
+<section class="hero">
+    <div class="container hero-content">
+        <h1>Erasing Dents.<br><span style="color: var(--accent);">Restoring Pride.</span></h1>
+        <p>Southwest Florida's Premier Mobile Paintless Dent Repair (PDR). Floyd brings craftsmanship and precision directly to your home or office.</p>
+        <a href="tel:+12393158807" class="btn">Get A Free Quote</a>
+    </div>
+</section>
+
+<section class="section-pad" style="background: #111;">
+    <div class="container">
+        <div class="text-center" style="margin-bottom: 40px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Results You Can See</h2>
+            <p style="color: var(--text-dim);">Scroll to watch the transformation.</p>
+        </div>
+
+        <div class="video-scroller">
+            <div class="video-card">
+                <video controls poster="assets/poster1.jpg">
+                    <source src="assets/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+             <div class="video-card">
+                <video controls poster="assets/poster2.jpg">
+                    <source src="assets/video2.mp4" type="video/mp4">
+                </video>
+            </div>
+             <div class="video-card">
+                <video controls poster="assets/poster3.jpg">
+                    <source src="assets/video3.mp4" type="video/mp4">
+                </video>
+            </div>
+             <div class="video-card">
+                <video controls poster="assets/poster4.jpg">
+                    <source src="assets/video4.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-pad">
+    <div class="container">
+        <div class="text-center" style="margin-bottom: 50px;">
+            <h2 style="font-size: 2.5rem;">What Our Clients Say</h2>
+            <div class="stars" style="font-size: 1.5rem; margin-top: 10px;">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="color: var(--text-dim); margin-top: 10px;">Real reviews from real neighbors in Southwest Florida.</p>
+        </div>
+
+        <div id="reviews-container" class="reviews-grid">
+            </div>
+    </div>
+</section>
+
+<section style="background: var(--accent); color: var(--primary); padding: 60px 0;">
+    <div class="container text-center">
+        <h2 style="margin-bottom: 20px;">Got a Dent? Don't Paint It. Fix It.</h2>
+        <p style="margin-bottom: 30px; font-weight: 600;">Mobile Service • Fair Pricing • Satisfaction Guaranteed</p>
+        <a href="tel:+12393158807" class="btn" style="background: var(--primary); color: #fff;">Call Now: (239) 315-8807</a>
+    </div>
+</section>
+
+<script>
+    // Review Data Array
+    const reviews = [
+        {
+            name: "Jason Modelo",
+            text: "Great service, great price, dent is gone. From the first message to the finished repair, everything was handled with care, honesty, and professionalism. The results honestly blew me away. The body lines are back, the reflections are clean, and the paint is untouched.",
+            date: "6 days ago"
+        },
+        {
+            name: "Theodore Massuger",
+            text: "I had a great experience with Ex-A-Dent. The mobile service was incredibly convenient—Floyd came right to my location and fixed a dent on my front fender in under an hour. You can't even tell where the damage was.",
+            date: "1 day ago"
+        },
+        {
+            name: "Aden Columbus",
+            text: "Floy did an amazing job fixing the dent in my car without messing up any of the paint. Would definitely recommend him to anyone who needs his service.",
+            date: "12 hours ago"
+        },
+        {
+            name: "Derrick Elliott",
+            text: "My car had a few dents left by the previous owner, and Floy came right to my house and completely blew me away. The dents are gone, and I literally forgot they were ever there.",
+            date: "5 days ago"
+        },
+        {
+            name: "June V",
+            text: "Flow Dudley was such a great help after a deer ran into my car... Dudley got it done man this guy works magic.",
+            date: "5 days ago"
+        },
+        {
+            name: "TrxpFN",
+            text: "I had a dent in my car that was really bothering me... The repair was done professionally and the results were amazing — you can’t even tell there was ever a dent. He was very knowledgeable, honest, and easy to deal with.",
+            date: "5 days ago"
+        },
+        {
+            name: "Kiloz Autowerks",
+            text: "Excellent paintless dent repair, my dent was removed perfectly. Prices were better than other techs I contacted and the mobile service made it super convenient.",
+            date: "6 days ago"
+        },
+        {
+            name: "Andy Atack",
+            text: "Awesome and reliable with fair prices. Made my BMW come out like new. Looked like a whole new door! Also came the same day!",
+            date: "5 days ago"
+        },
+        {
+            name: "Chase Adrover",
+            text: "We were highly impressed with how close to perfect given the damage. 10/10 would hire again for any future repairs. Floy was very professional, on time and came to my job.",
+            date: "5 days ago"
+        }
+    ];
+
+    // Function to render reviews
+    const container = document.getElementById('reviews-container');
+
+    reviews.forEach(review => {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        
+        // Truncate text if it's too long for the card design
+        const text = review.text.length > 150 ? review.text.substring(0, 150) + '...' : review.text;
+
+        card.innerHTML = `
+            <div class="review-header">
+                <span class="reviewer-name">${review.name}</span>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <p class="review-text">"${text}"</p>
+            <small style="color: #666; display:block; margin-top:10px;">${review.date}</small>
+        `;
+        container.appendChild(card);
+    });
+</script>
